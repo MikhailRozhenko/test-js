@@ -19,11 +19,14 @@ document.addEventListener('DOMContentLoaded'),
     document.addEventListener('DOMContentLoaded', () => {
       const lsData = getFromLS('formData');
 
-      try {
-        formData = lsData;
-        formEL.elements.name.value = lsData.name;
-        formEL.elements.message.value = lsData.message;
-      } catch {}
+      if (lsData) {
+        formData = {
+          name: lsData.name || '',
+          message: lsData.message || '',
+        };
+        formEL.elements.name.value = formData.name;
+        formEL.elements.message.value = formData.message;
+      }
     });
 
     function saveToLS(key, value) {
