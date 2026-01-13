@@ -844,10 +844,6 @@
 
 // Далі зробимо так, щоб проміс виконувався або був відхиленим зі значенням, вказаним у властивості value після затримки в delay мілісекунд. За замовчуванням проміс виконуватиметься успішно, для цього вказуємо значення за замовчуванням true для властивості shouldResolve при деструктуризації.
 
-const startBtn = document.querySelector('[data-action-start]');
-const stopBtn = document.querySelector('[data-action-stop]');
-const timerEl = document.querySelector('.js-clockface');
-
 // const timer = {
 //   intervalId: null,
 
@@ -883,6 +879,10 @@ const timerEl = document.querySelector('.js-clockface');
 // stopBtn.addEventListener('click', () => {
 //   timer.stop();
 // });
+
+const startBtn = document.querySelector('[data-action-start]');
+const stopBtn = document.querySelector('[data-action-stop]');
+const timerEl = document.querySelector('.js-clockface');
 
 function formatTime(ms) {
   const totalSeconds = Math.floor(ms / 1000);
